@@ -20,4 +20,4 @@ jobs:
             cd /var/www/house-778
             git config --global --add safe.directory /var/www/house-778
             git pull origin main
-            bash /var/www/house-778/deploy.sh
+            bash /var/www/house-778/theme/deploy.sh
