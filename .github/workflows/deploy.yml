@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           passord: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/house-778
-            git config --global --add safe.directory /var/www/house-778
+            cd /var/www/house-778/theme
+            git config --global --add safe.directory /var/www/house-778/theme
             git pull origin main
             bash /var/www/house-778/theme/deploy.sh
