@@ -187,6 +187,7 @@
                     <input type="color" id="inputcolor2" name="inputcolor2" value="<?php echo htmlspecialchars($inputcolor2); ?>"><br><br>
                     <button type="submit">Save Preferences</button>
                     <p>If your page glitches due to the old theme, press Ctrl + Shift + R.</p>
+                    <a href="/play.php">Blank Page</a>
                 </form>
             </div>
         </div>
