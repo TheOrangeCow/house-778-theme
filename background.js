@@ -8,7 +8,7 @@ async function fetchUsername() {
             return data.username;
         }
     } catch (error) {
-        console.log('%cError fetching username: ' + error, 'color: red');
+        console.log('%cError fetching username: ' + error);
         return "default";
     }
 }
@@ -17,15 +17,14 @@ async function fetchUserSettings(username) {
     try {
         const response = await fetch(`https://theme.house-778.theorangecow.org/thejsonfile.php?user=${encodeURIComponent(username)}`);
         const userSettings = await response.json();
-        console.log(response);
         if (userSettings && userSettings.username && userSettings.username === username) {
             processUserSettings(userSettings);
         } else {
-            console.log('%cError: Username mismatch or invalid user settings', 'color: red');
+            console.log('%cError: Username mismatch or invalid user settings');
             applyDefaultSettings();
         }
     } catch (error) {
-        console.log('%cError fetching JSON File: ' + error, 'color: red');
+        console.log('%cError fetching JSON File: ' + error);
         applyDefaultSettings();
     }
 }
@@ -69,7 +68,7 @@ function processUserSettings(settings) {
             document.body.style.animation = "none";
         }
     } catch (error) {
-        console.log('%cError fetching background color: ' + error.message, 'color: red');
+        console.log('%cError fetching background color: ' + error.message);
         document.body.style.background = `linear-gradient(45deg, #ff00cc, #00ffcc, #cc00ff)`;
         document.body.style.backgroundSize = "400% 400%";
         document.body.style.animation = "gradientAnimation 15s infinite";
@@ -96,7 +95,7 @@ function processUserSettings(settings) {
         containers();
         setInterval(containers, 100);
     } catch (error) {
-        console.log('%cError applying styles to containers: ' + error.message, 'color: red');
+        console.log('%cError applying styles to containers: ' + error.message);
     }
 
     try {
@@ -116,7 +115,7 @@ function processUserSettings(settings) {
         styleButtons();
         setInterval(styleButtons, 100);
     } catch (error) {
-        console.log('%cError applying button styles: ' + error.message, 'color: red');
+        console.log('%cError applying button styles: ' + error.message);
     }
 
     try {
@@ -145,7 +144,7 @@ function processUserSettings(settings) {
                 console.error("Unknown background mode");
         }
     } catch (error) {
-        console.log('%cError applying background mode: ' + error.message, 'color: red');
+        console.log('%cError applying background mode: ' + error.message);
     }
 }
 
